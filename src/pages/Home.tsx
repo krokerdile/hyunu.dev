@@ -1,9 +1,9 @@
-import { ReactInstance, useRef } from 'react';
+import { useRef } from 'react';
 import Resume from '../components/Resume';
 import { useReactToPrint } from 'react-to-print';
 
 export default function Home() {
-  const printRef = useRef<ReactInstance | null>(null);
+  const printRef = useRef<HTMLDivElement | null>(null);
 
   const handlePrint = useReactToPrint({
     content: () => printRef.current,

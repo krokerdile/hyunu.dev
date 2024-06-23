@@ -1,14 +1,20 @@
-const iconMap: { [key in 'github' | 'tistory' | 'linkedin']: string } = {
+type LinkType = 'github' | 'tistory' | 'linkedin' | 'default';
+
+const iconMap: {
+  [key in 'github' | 'tistory' | 'linkedin' | 'default']: string;
+} = {
   github: './assets/github.png',
   tistory: './assets/tistory.png',
   linkedin: './assets/linkedIn.png',
+  default: './assets/default.png',
 };
 
 const getLinkType = (url: string) => {
-  if (url.includes('github.com')) return 'github';
-  if (url.includes('tistory.com')) return 'tistory';
-  if (url.includes('linkedin.com')) return 'linkedin';
-  return 'default';
+  let linkType: LinkType = 'default';
+  if (url.includes('github.com')) linkType = 'github';
+  if (url.includes('tistory.com')) linkType = 'tistory';
+  if (url.includes('linkedin.com')) linkType = 'linkedin';
+  return linkType;
 };
 
 interface LinkItemProps {
