@@ -82,3 +82,7 @@ a {
   @apply text-gray-700;
   @apply text-sm;
 }
+
+li p {
+  display: inline;
+}
